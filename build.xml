@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="YamlTools" default="check">
+
+	<target name="check" depends="composer-validate,lint,cs,phpstan"/>
+	<target name="fix" depends="cs-fix"/>
+
+	<target name="composer-validate">
+		<exec executable="composer" logoutput="true" passthru="true" checkreturn="true">
+			<arg value="validate"/>
+			<arg value="--ansi"/>
+		</exec>
+	</target>
+
+	<target name="lint">
+		<exec executable="vendor/bin/parallel-lint" logoutput="true" passthru="true" checkreturn="true">
+			<arg path="src" />
+			<arg value="--colors"/>
+		</exec>
+	</target>
+
+	<target name="cs">
+		<exec executable="vendor/bin/ecs" logoutput="true" passthru="true" checkreturn="true">
+			<arg value="check"/>
+			<arg path="src"/>
+			<arg value="--ansi"/>
+		</exec>
+	</target>
+
+	<target name="cs-fix">
+		<exec executable="vendor/bin/ecs" logoutput="true" passthru="true" checkreturn="true">
+			<arg value="check"/>
+			<arg path="src"/>
+			<arg value="--fix"/>
+			<arg value="--ansi"/>
+		</exec>
+	</target>
+
+	<target name="phpstan">
+		<exec executable="vendor/bin/phpstan" logoutput="true" passthru="true" checkreturn="true">
+			<arg value="analyze"/>
+			<arg path="src"/>
+			<arg value="--level=7"/>
+			<arg value="--ansi"/>
+		</exec>
+	</target>
+
+</project>

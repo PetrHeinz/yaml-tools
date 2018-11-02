@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use PetrHeinz\YamlTools\Command\YamlFixCommand;
+
+if (is_file(__DIR__ . '/../vendor/autoload.php')) {
+    require_once __DIR__ . '/../vendor/autoload.php';
+} else {
+    require_once __DIR__ . '/../../../autoload.php';
+}
+
+$application = new \Symfony\Component\Console\Application('YAML Tools');
+
+$application->add(new YamlFixCommand());
+$application->run();

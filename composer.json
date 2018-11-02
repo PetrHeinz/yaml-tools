@@ -1,0 +1,28 @@
+{
+    "name": "petr-heinz/yaml-tools",
+    "type": "library",
+    "description": "A tool for easier maintenance of YAML config files.",
+    "license": "MIT",
+    "bin": [
+        "bin/yaml-tools"
+    ],
+    "require": {
+        "php": "^7.1",
+        "symfony/console": "^4.1"
+    },
+    "require-dev": {
+        "jakub-onderka/php-console-highlighter": "^0.4.0",
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "phing/phing": "^2.16",
+        "phpstan/phpstan": "^0.10.5",
+        "symplify/easy-coding-standard": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "PetrHeinz\\YamlTools\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
