@@ -7,3 +7,6 @@ imports:
 parameters:
     exclude_checkers:
         - 'PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer'
+services:
+    PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer:
+        sortAlgorithm: alpha
