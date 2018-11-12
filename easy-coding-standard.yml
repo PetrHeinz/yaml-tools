@@ -10,4 +10,5 @@ parameters:
 services:
     PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer:
         sortAlgorithm: alpha
+    SlamCsFixer\FinalInternalClassFixer: ~
     Symplify\CodingStandard\Sniffs\CleanCode\CognitiveComplexitySniff: ~
