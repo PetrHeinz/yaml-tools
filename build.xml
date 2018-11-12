@@ -3,6 +3,7 @@
 
 	<target name="check" depends="composer-validate,lint,cs,phpstan,tests"/>
 	<target name="fix" depends="cs-fix"/>
+	<target name="clean" depends="cs-clean"/>
 
 	<target name="composer-validate">
 		<exec executable="composer" logoutput="true" passthru="true" checkreturn="true">
@@ -35,6 +36,14 @@
 			<arg path="tests"/>
 			<arg value="--fix"/>
 			<arg value="--ansi"/>
+		</exec>
+	</target>
+
+	<target name="cs-clean">
+		<exec executable="vendor/bin/ecs">
+			<arg value="check"/>
+			<arg path="src"/>
+			<arg value="--clear-cache"/>
 		</exec>
 	</target>
 
