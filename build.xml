@@ -14,6 +14,7 @@
 
 	<target name="lint">
 		<exec executable="vendor/bin/parallel-lint" logoutput="true" passthru="true" checkreturn="true">
+			<arg path="bin/yaml-tools"/>
 			<arg path="src" />
 			<arg path="tests"/>
 			<arg value="--colors"/>
@@ -23,6 +24,7 @@
 	<target name="cs">
 		<exec executable="vendor/bin/ecs" logoutput="true" passthru="true" checkreturn="true">
 			<arg value="check"/>
+			<arg path="bin/yaml-tools"/>
 			<arg path="src"/>
 			<arg path="tests"/>
 			<arg value="--ansi"/>
@@ -32,6 +34,7 @@
 	<target name="cs-fix">
 		<exec executable="vendor/bin/ecs" logoutput="true" passthru="true" checkreturn="true">
 			<arg value="check"/>
+			<arg path="bin/yaml-tools"/>
 			<arg path="src"/>
 			<arg path="tests"/>
 			<arg value="--fix"/>
@@ -50,6 +53,7 @@
 	<target name="phpstan">
 		<exec executable="vendor/bin/phpstan" logoutput="true" passthru="true" checkreturn="true">
 			<arg value="analyze"/>
+			<arg path="bin/yaml-tools"/>
 			<arg path="src"/>
 			<arg path="tests"/>
 			<arg value="--level=7"/>
