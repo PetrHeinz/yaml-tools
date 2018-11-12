@@ -15,11 +15,17 @@
         "jakub-onderka/php-parallel-lint": "^1.0",
         "phing/phing": "^2.16",
         "phpstan/phpstan": "^0.10.5",
+        "phpunit/phpunit": "^7.4",
         "symplify/easy-coding-standard": "^5.1"
     },
     "autoload": {
         "psr-4": {
             "PetrHeinz\\YamlTools\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PetrHeinz\\YamlTools\\Tests\\": "tests/"
         }
     },
     "config": {
