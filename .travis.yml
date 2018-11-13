@@ -12,19 +12,19 @@ matrix:
     env: COMPOSER_PARAMS="--prefer-lowest"
   - name: "Test usage 1"
     install: 
-      - mkdir usage-test && cd usage-test && composer init --repository="{name\"path\",url:\"..\"}"
+      - mkdir usage-test && cd usage-test && composer init --repository="name\"path\",url:\"..\""
       - composer require petr-heinz/yaml-tools@dev --no-interaction
     script:
       - usage-test/vendor/bin/yaml-tools fix example.yml
   - name: "Test usage 2"
     install: 
-      - mkdir usage-test && cd usage-test && composer init --repository=".."
+      - mkdir usage-test && cd usage-test && composer init --repository="../composer.json"
       - composer require petr-heinz/yaml-tools@dev --no-interaction
     script:
       - usage-test/vendor/bin/yaml-tools fix example.yml
   - name: "Test usage 3"
     install: 
-      - mkdir usage-test && cd usage-test && composer init --repository="{name:\"vcs\",url:\"../.git\"}"
+      - mkdir usage-test && cd usage-test && composer init --repository="name:\"vcs\",url:\"../.git\""
       - composer require petr-heinz/yaml-tools@dev --no-interaction
     script:
       - usage-test/vendor/bin/yaml-tools fix example.yml
