@@ -10,9 +10,21 @@ matrix:
     env: COMPOSER_PARAMS=""
   - name: "Test with highest versions of Composer dependendcies"
     env: COMPOSER_PARAMS="--prefer-lowest"
-  - name: "Test usage"
+  - name: "Test usage 1"
     install: 
-      - mkdir usage-test && cd usage-test && composer init --repository={name:"path",url:".."}
+      - mkdir usage-test && cd usage-test && composer init --repository="{name\"path\",url:\"..\"}"
+      - composer require petr-heinz/yaml-tools@dev --no-interaction
+    script:
+      - usage-test/vendor/bin/yaml-tools fix example.yml
+  - name: "Test usage 2"
+    install: 
+      - mkdir usage-test && cd usage-test && composer init --repository=".."
+      - composer require petr-heinz/yaml-tools@dev --no-interaction
+    script:
+      - usage-test/vendor/bin/yaml-tools fix example.yml
+  - name: "Test usage 3"
+    install: 
+      - mkdir usage-test && cd usage-test && composer init --repository="{name:\"vcs\",url:\"../.git\"}"
       - composer require petr-heinz/yaml-tools@dev --no-interaction
     script:
       - usage-test/vendor/bin/yaml-tools fix example.yml
