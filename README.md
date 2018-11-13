@@ -1,7 +1,9 @@
 # YAML Tools
 
 [![Build Status](https://travis-ci.org/PetrHeinz/yaml-tools.svg?branch=master)](https://travis-ci.org/PetrHeinz/yaml-tools)
-[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
+[![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg)](https://github.com/phpstan/phpstan)
+[![Latest Stable Version](https://poser.pugx.org/petr-heinz/yaml-tools/v/stable)](https://packagist.org/packages/petr-heinz/yaml-tools)
+[![License](https://poser.pugx.org/petr-heinz/yaml-tools/license)](https://packagist.org/packages/petr-heinz/yaml-tools)
 
 Tool that will one day help developers with maintaining their YAML configs.
 
