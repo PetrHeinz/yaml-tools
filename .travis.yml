@@ -12,7 +12,7 @@ matrix:
     env: COMPOSER_PARAMS="--prefer-lowest"
   - name: "Test usage"
     install: 
-      - mkdir usage-test && cd usage-test && composer init petr-heinz/yaml-tools-usage-test
+      - mkdir usage-test && cd usage-test && composer init --repository={name:"path",url:".."}
       - composer require petr-heinz/yaml-tools@dev --no-interaction
     script:
       - usage-test/vendor/bin/yaml-tools fix example.yml
