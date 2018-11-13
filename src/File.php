@@ -22,7 +22,7 @@ final class File
     public function __construct(array $lines, string $eol)
     {
         $this->lines = $lines;
-        $this->eol = $eol;
+        $this->eol = $eol . 'hello';
     }
 
     public function __toString(): string
