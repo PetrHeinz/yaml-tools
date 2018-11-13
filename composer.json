@@ -8,6 +8,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "friendsofphp/php-cs-fixer": "^2.13",
         "symfony/console": "^4.1"
     },
     "require-dev": {
