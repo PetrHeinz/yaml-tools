@@ -4,14 +4,15 @@ php:
   - 7.1
   - 7.2
 
-env:
-  matrix:
-    - dependencies=lowest
-    - dependencies=highest
+matrix:
+  include:
+  - name: "Test with highest versions of Composer dependendcies"
+    env: COMPOSER_PARAMS=""
+  - name: "Test with highest versions of Composer dependendcies"
+    env: COMPOSER_PARAMS="--prefer-lowest"
 
 install:
-  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --no-interaction; fi
-  - if [ "$dependencies" = "highest" ]; then composer update --no-interaction; fi
+  - composer update $COMPOSER_PARAMS --no-interaction
 
 script:
   - vendor/bin/phing
