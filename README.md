@@ -10,7 +10,7 @@ To see why you would want to do that, you can read about [YAML file sort checker
 
 ## Installation
 ```
-composer require --dev petr-heinz/yaml-tools
+composer require --dev petr-heinz/yaml-tools:@dev
 ```
 
 ## Usage
